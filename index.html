@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Red Light Green Light</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      overflow: hidden;
+    }
+    video, canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    #status {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: white;
+      font-size: 24px;
+      font-family: monospace;
+      z-index: 10;
+      
+    }
+    #hitIndicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 96px;
+  font-family: monospace;
+  color: red;
+  display: none;
+  z-index: 20;
+}
+
+  </style>
+</head>
+<body>
+
+  <div id="status">GREEN</div>
+  <div id="hitIndicator">HIT</div>
+
+  <video id="video" autoplay playsinline></video>
+  <canvas id="canvas"></canvas>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
